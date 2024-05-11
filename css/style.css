@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    --primary: rgb(0, 0, 0);
+    --secondary: #fff;
+}
+
+/* Wrapper */
+.wrapper {
+    --bg-color: rgb(91, 148, 91);
+    --opacity: .7;
+    width: 50%;
+    aspect-ratio: 1;
+    margin: 2rem auto 2rem;
+    position: relative;
+    text-align: center;
+    &::after {
+        content: '';
+        background: var(--bg-color) url('your_image') no-repeat center center;
+        background-size: cover;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        z-index: -1;
+        aspect-ratio: 1;
+        opacity: var(--opacity);
+        background-blend-mode: darken;
+    }
+}
